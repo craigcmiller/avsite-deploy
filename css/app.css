@@ -359,6 +359,93 @@ code {
     border-bottom: 2px solid var(--mud-palette-primary);
 }
 
+/* ── Month calendar grid ── */
+.month-calendar {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.month-header-row,
+.month-week-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.month-header-cell {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 0;
+    color: var(--mud-palette-text-secondary);
+}
+
+.month-day-cell {
+    min-height: 64px;
+    border: 1px solid var(--mud-palette-table-lines);
+    border-radius: 4px;
+    padding: 4px 6px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    background: var(--mud-palette-surface);
+    transition: background 0.15s;
+}
+
+.month-day-cell:hover {
+    background: var(--mud-palette-action-hover);
+}
+
+.month-day-empty {
+    border: none;
+    background: transparent;
+    cursor: default;
+    pointer-events: none;
+}
+
+.month-day-blocked {
+    background: rgba(255, 152, 0, 0.08);
+}
+
+.month-day-today .month-day-number {
+    background: var(--mud-palette-primary);
+    color: var(--mud-palette-primary-text);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.month-day-number {
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 24px;
+    width: 24px;
+    text-align: center;
+}
+
+.month-booking-dots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-top: 4px;
+}
+
+.month-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.month-dot-mine  { background: var(--mud-palette-success); }
+.month-dot-other { background: var(--mud-palette-divider); }
+
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
     color: var(--bs-secondary-color);
     text-align: end;
