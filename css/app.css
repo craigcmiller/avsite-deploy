@@ -203,6 +203,26 @@ code {
     text-transform: none;
 }
 
+/* Left-positioned MudTabs: force the component to fill its containing block.
+   Without this, the outer flex container shrinks to the intrinsic width of its
+   content (tab strip + panel content) instead of filling the parent width. */
+.mud-tabs.mud-tabs-vertical {
+    width: 100% !important;
+}
+
+.mud-tabs.mud-tabs-vertical > .mud-tabs-panels {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    overflow: auto !important;
+}
+
+/* mud-tabs-panels is itself display:flex, so the mud-tab-panel child also needs
+   flex-grow so it fills the panels container rather than shrinking to content. */
+.mud-tabs-panels.mud-tabs-vertical > .mud-tab-panel {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+}
+
 /* ── Aircraft booking calendar ────────────────────────────────────────────── */
 
 .booking-calendar {
