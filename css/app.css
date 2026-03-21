@@ -221,6 +221,13 @@ code {
 .mud-tabs-panels.mud-tabs-vertical > .mud-tab-panel {
     flex: 1 1 0% !important;
     min-width: 0 !important;
+    padding: 16px !important;
+}
+
+/* Left-align the tab label buttons in the vertical tab strip. */
+.mud-tabs.mud-tabs-vertical .mud-tab {
+    justify-content: flex-start !important;
+    padding-left: 16px !important;
 }
 
 /* ── Aircraft booking calendar ────────────────────────────────────────────── */
